@@ -3,8 +3,8 @@ import vue from '@vitejs/plugin-vue'
 
 // Vite 設定：Vue 3 單檔元件 + 對 WebSocket 伺服器的開發代理
 export default defineConfig({
-  // 使用相對路徑，讓打包後的網站能放在任何子路徑下（例如 GitHub Pages 的 /guesswhat/）
-  base: './',
+  // GitHub Pages 專案頁面位於 /guesswhat/ 子路徑，用絕對 base 才能在有/無結尾斜線時都正確載入資源
+  base: '/guesswhat/',
   plugins: [vue()],
   server: {
     port: 5173,
