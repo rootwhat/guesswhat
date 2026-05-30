@@ -44,6 +44,15 @@ npm run build     # 打包正式版到 dist/
 npm test          # 執行單元測試（引擎、賽局求解器、AI）
 ```
 
+### 🌐 GitHub Pages 部署
+
+專案已內建 `.github/workflows/deploy.yml`，推送後會自動建置並部署到 GitHub Pages。
+**一次性設定**：到 repo 的 *Settings → Pages → Build and deployment → Source* 選擇 **GitHub Actions** 即可。
+網址會是 `https://<owner>.github.io/guesswhat/`。
+
+> ⚠️ GitHub Pages 為純靜態托管，**只有 AI 模式可完整遊玩**；
+> 「對決模式」需要 WebSocket 後端（`npm run server`），請另行部署於支援長連線的服務（如 Render、Railway、Fly.io 等）並調整連線位址。
+
 ## 🧠 AI 演算法（重點）
 
 需求是「在不知道對手出牌的情況下的最佳解，並包含大量進階判斷與預測」。
